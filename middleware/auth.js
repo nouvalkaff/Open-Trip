@@ -4,7 +4,7 @@ const { Users } = require("../models"); // Import user model
 routes = {};
 
 //role Host = 1
-//role Traveller = 2
+//role Traveller = 23
 //role Admin = 3
 routes.roleAdmin = async (req, res, next) => {
   try {

@@ -16,7 +16,18 @@ var s3 = new AWS.S3({
   secretAccessKey: process.env.AWS_SECRET,
 });
 
-//! BELUM BERES, HANYA BISA ASSIGN SATU ACTIVITY
+function getFromBody(i, body) {
+  const resp = [];
+  for (let j = i; j < i + 4; j++) {
+    const idx = j + 1;
+    let data = {
+      do: body["do" + idx],
+      time: body["time" + idx],
+    };
+    resp.push(data);
+  }
+  return resp;
+}
 exports.createTrip = async (req, res) => {
   try {
     const {
@@ -365,67 +376,13 @@ exports.createTrip = async (req, res) => {
       arrDate.push(element);
 
       const day_time_act = [];
-
-      const tact1 = {},
-        tact2 = {},
-        tact3 = {},
-        tact4 = {},
-        activity1 = [],
-        object1 = {};
-
-      const tact5 = {},
-        tact6 = {},
-        tact7 = {},
-        tact8 = {},
-        activity2 = [],
-        object2 = {};
-
-      const tact9 = {},
-        tact10 = {},
-        tact11 = {},
-        tact12 = {},
-        activity3 = [],
-        object3 = {};
-
-      tact1.time = time1;
-      tact1.do = do1;
-      tact2.time = time2;
-      tact2.do = do2;
-      tact3.time = time3;
-      tact3.do = do3;
-      tact4.time = time4;
-      tact4.do = do4;
-
-      tact5.time = time5;
-      tact5.do = do5;
-      tact6.time = time6;
-      tact6.do = do6;
-      tact7.time = time7;
-      tact7.do = do7;
-      tact8.time = time8;
-      tact8.do = do8;
-
-      tact9.time = time9;
-      tact9.do = do9;
-      tact10.time = time10;
-      tact10.do = do10;
-      tact11.time = time11;
-      tact11.do = do11;
-      tact12.time = time12;
-      tact12.do = do12;
-
-      activity1.push(tact1, tact2, tact3, tact4);
-      activity2.push(tact5, tact6, tact7, tact8);
-      activity3.push(tact9, tact10, tact11, tact12);
-
-      object1.day = day1;
-      object1.activity = activity1;
-      object2.day = day2;
-      object2.activity = activity2;
-      object3.day = day3;
-      object3.activity = activity3;
-
-      day_time_act.push(object1, object2, object3);
+      for (let i = 0; i < 3; i++) {
+        let dayData = {
+          day: i + 1,
+          activities: getFromBody(i * 4, req.body),
+        };
+        day_time_act.push(dayData);
+      }
 
       const token = req.headers.authorization;
       const decoded = jwt.verify(token, process.env.SECRET_KEY);
@@ -635,67 +592,13 @@ exports.createTrip = async (req, res) => {
       arrDate.push(element);
 
       const day_time_act = [];
-
-      const tact1 = {},
-        tact2 = {},
-        tact3 = {},
-        tact4 = {},
-        activity1 = [],
-        object1 = {};
-
-      const tact5 = {},
-        tact6 = {},
-        tact7 = {},
-        tact8 = {},
-        activity2 = [],
-        object2 = {};
-
-      const tact9 = {},
-        tact10 = {},
-        tact11 = {},
-        tact12 = {},
-        activity3 = [],
-        object3 = {};
-
-      tact1.time = time1;
-      tact1.do = do1;
-      tact2.time = time2;
-      tact2.do = do2;
-      tact3.time = time3;
-      tact3.do = do3;
-      tact4.time = time4;
-      tact4.do = do4;
-
-      tact5.time = time5;
-      tact5.do = do5;
-      tact6.time = time6;
-      tact6.do = do6;
-      tact7.time = time7;
-      tact7.do = do7;
-      tact8.time = time8;
-      tact8.do = do8;
-
-      tact9.time = time9;
-      tact9.do = do9;
-      tact10.time = time10;
-      tact10.do = do10;
-      tact11.time = time11;
-      tact11.do = do11;
-      tact12.time = time12;
-      tact12.do = do12;
-
-      activity1.push(tact1, tact2, tact3, tact4);
-      activity2.push(tact5, tact6, tact7, tact8);
-      activity3.push(tact9, tact10, tact11, tact12);
-
-      object1.day = day1;
-      object1.activity = activity1;
-      object2.day = day2;
-      object2.activity = activity2;
-      object3.day = day3;
-      object3.activity = activity3;
-
-      day_time_act.push(object1, object2, object3);
+      for (let i = 0; i < 3; i++) {
+        let dayData = {
+          day: i + 1,
+          activities: getFromBody(i * 4, req.body),
+        };
+        day_time_act.push(dayData);
+      }
 
       const token = req.headers.authorization;
       const decoded = jwt.verify(token, process.env.SECRET_KEY);
@@ -895,67 +798,13 @@ exports.createTrip = async (req, res) => {
     arrDate.push(element);
 
     const day_time_act = [];
-
-    const tact1 = {},
-      tact2 = {},
-      tact3 = {},
-      tact4 = {},
-      activity1 = [],
-      object1 = {};
-
-    const tact5 = {},
-      tact6 = {},
-      tact7 = {},
-      tact8 = {},
-      activity2 = [],
-      object2 = {};
-
-    const tact9 = {},
-      tact10 = {},
-      tact11 = {},
-      tact12 = {},
-      activity3 = [],
-      object3 = {};
-
-    tact1.time = time1;
-    tact1.do = do1;
-    tact2.time = time2;
-    tact2.do = do2;
-    tact3.time = time3;
-    tact3.do = do3;
-    tact4.time = time4;
-    tact4.do = do4;
-
-    tact5.time = time5;
-    tact5.do = do5;
-    tact6.time = time6;
-    tact6.do = do6;
-    tact7.time = time7;
-    tact7.do = do7;
-    tact8.time = time8;
-    tact8.do = do8;
-
-    tact9.time = time9;
-    tact9.do = do9;
-    tact10.time = time10;
-    tact10.do = do10;
-    tact11.time = time11;
-    tact11.do = do11;
-    tact12.time = time12;
-    tact12.do = do12;
-
-    activity1.push(tact1, tact2, tact3, tact4);
-    activity2.push(tact5, tact6, tact7, tact8);
-    activity3.push(tact9, tact10, tact11, tact12);
-
-    object1.day = day1;
-    object1.activity = activity1;
-    object2.day = day2;
-    object2.activity = activity2;
-    object3.day = day3;
-    object3.activity = activity3;
-
-    day_time_act.push(object1, object2, object3);
+    for (let i = 0; i < 3; i++) {
+      let dayData = {
+        day: i + 1,
+        activities: getFromBody(i * 4, req.body),
+      };
+      day_time_act.push(dayData);
+    }
 
     const token = req.headers.authorization;
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
@@ -1070,60 +919,6 @@ exports.getAllTrips = async (req, res) => {
     });
   }
 };
-
-// //Filter By ID
-// exports.getTripById = async (req, res) => {
-//   try {
-//     // const limit = req.query.limit;
-//     // const page = req.query.page;
-//     const id = req.query.id;
-//     const tripData = await Trips.findOne({
-//       where: { id: id },
-//       attributes: {
-//         exclude: [
-//           "createdAt",
-//           "updatedAt",
-//           "datestamp_1",
-//           "datestamp_2",
-//           "datestamp_3",
-//         ],
-//       },
-//       // limit: limit,
-//       // offset: page * limit,
-//       include: {
-//         model: Activities,
-//         attributes: {
-//           exclude: ["createdAt", "updatedAt"],
-//         },
-//       },
-//     });
-
-//     // if (!tripData) {
-//     //   res.status(404).json({
-//     //     code: 404,
-//     //     statustext: "Not Found",
-//     //     success: false,
-//     //     message: `The trip with ID ${id} is not found`,
-//     //   });
-//     // }
-
-//     return res.status(200).json({
-//       code: 200,
-//       statustext: "OK",
-//       success: true,
-//       message: `The trip with ID ${id} is successfully retrieved`,
-//       result: tripData,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).json({
-//       code: 500,
-//       statustext: "Internal Server Error",
-//       success: false,
-//       message: "Failed to get data",
-//     });
-//   }
-// };
 
 exports.getTripById = async (req, res) => {
   try {
