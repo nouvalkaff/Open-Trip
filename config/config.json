@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "xuqubireyzygma",
-    "password": "3024b51451020168831352193612faf94a4912a96780ab566a194fe0cf0f96a1",
-    "database": "d19n406fc4b8o9",
-    "host": "ec2-54-158-232-223.compute-1.amazonaws.com",
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
     "port": 5432,
     "dialect": "postgres",
     "dialectOptions": {
