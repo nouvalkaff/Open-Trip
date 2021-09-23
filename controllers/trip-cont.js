@@ -1765,67 +1765,13 @@ exports.updateTrip = async (req, res) => {
       arrDate.push(element);
 
       const day_time_act = [];
-
-      const tact1 = {},
-        tact2 = {},
-        tact3 = {},
-        tact4 = {},
-        activity1 = [],
-        object1 = {};
-
-      const tact5 = {},
-        tact6 = {},
-        tact7 = {},
-        tact8 = {},
-        activity2 = [],
-        object2 = {};
-
-      const tact9 = {},
-        tact10 = {},
-        tact11 = {},
-        tact12 = {},
-        activity3 = [],
-        object3 = {};
-
-      tact1.time = time1;
-      tact1.do = do1;
-      tact2.time = time2;
-      tact2.do = do2;
-      tact3.time = time3;
-      tact3.do = do3;
-      tact4.time = time4;
-      tact4.do = do4;
-
-      tact5.time = time5;
-      tact5.do = do5;
-      tact6.time = time6;
-      tact6.do = do6;
-      tact7.time = time7;
-      tact7.do = do7;
-      tact8.time = time8;
-      tact8.do = do8;
-
-      tact9.time = time9;
-      tact9.do = do9;
-      tact10.time = time10;
-      tact10.do = do10;
-      tact11.time = time11;
-      tact11.do = do11;
-      tact12.time = time12;
-      tact12.do = do12;
-
-      activity1.push(tact1, tact2, tact3, tact4);
-      activity2.push(tact5, tact6, tact7, tact8);
-      activity3.push(tact9, tact10, tact11, tact12);
-
-      object1.day = day1;
-      object1.activity = activity1;
-      object2.day = day2;
-      object2.activity = activity2;
-      object3.day = day3;
-      object3.activity = activity3;
-
-      day_time_act.push(object1, object2, object3);
+      for (let i = 0; i < 3; i++) {
+        let dayData = {
+          day: i + 1,
+          activities: getFromBody(i * 4, req.body),
+        };
+        day_time_act.push(dayData);
+      }
 
       // const token = req.headers.authorization;
       // const decoded = jwt.verify(token, process.env.SECRET_KEY);
@@ -2032,67 +1978,13 @@ exports.updateTrip = async (req, res) => {
       arrDate.push(element);
 
       const day_time_act = [];
-
-      const tact1 = {},
-        tact2 = {},
-        tact3 = {},
-        tact4 = {},
-        activity1 = [],
-        object1 = {};
-
-      const tact5 = {},
-        tact6 = {},
-        tact7 = {},
-        tact8 = {},
-        activity2 = [],
-        object2 = {};
-
-      const tact9 = {},
-        tact10 = {},
-        tact11 = {},
-        tact12 = {},
-        activity3 = [],
-        object3 = {};
-
-      tact1.time = time1;
-      tact1.do = do1;
-      tact2.time = time2;
-      tact2.do = do2;
-      tact3.time = time3;
-      tact3.do = do3;
-      tact4.time = time4;
-      tact4.do = do4;
-
-      tact5.time = time5;
-      tact5.do = do5;
-      tact6.time = time6;
-      tact6.do = do6;
-      tact7.time = time7;
-      tact7.do = do7;
-      tact8.time = time8;
-      tact8.do = do8;
-
-      tact9.time = time9;
-      tact9.do = do9;
-      tact10.time = time10;
-      tact10.do = do10;
-      tact11.time = time11;
-      tact11.do = do11;
-      tact12.time = time12;
-      tact12.do = do12;
-
-      activity1.push(tact1, tact2, tact3, tact4);
-      activity2.push(tact5, tact6, tact7, tact8);
-      activity3.push(tact9, tact10, tact11, tact12);
-
-      object1.day = day1;
-      object1.activity = activity1;
-      object2.day = day2;
-      object2.activity = activity2;
-      object3.day = day3;
-      object3.activity = activity3;
-
-      day_time_act.push(object1, object2, object3);
+      for (let i = 0; i < 3; i++) {
+        let dayData = {
+          day: i + 1,
+          activities: getFromBody(i * 4, req.body),
+        };
+        day_time_act.push(dayData);
+      }
 
       // const token = req.headers.authorization;
       // const decoded = jwt.verify(token, process.env.SECRET_KEY);
@@ -2292,67 +2184,13 @@ exports.updateTrip = async (req, res) => {
     arrDate.push(element);
 
     const day_time_act = [];
-
-    const tact1 = {},
-      tact2 = {},
-      tact3 = {},
-      tact4 = {},
-      activity1 = [],
-      object1 = {};
-
-    const tact5 = {},
-      tact6 = {},
-      tact7 = {},
-      tact8 = {},
-      activity2 = [],
-      object2 = {};
-
-    const tact9 = {},
-      tact10 = {},
-      tact11 = {},
-      tact12 = {},
-      activity3 = [],
-      object3 = {};
-
-    tact1.time = time1;
-    tact1.do = do1;
-    tact2.time = time2;
-    tact2.do = do2;
-    tact3.time = time3;
-    tact3.do = do3;
-    tact4.time = time4;
-    tact4.do = do4;
-
-    tact5.time = time5;
-    tact5.do = do5;
-    tact6.time = time6;
-    tact6.do = do6;
-    tact7.time = time7;
-    tact7.do = do7;
-    tact8.time = time8;
-    tact8.do = do8;
-
-    tact9.time = time9;
-    tact9.do = do9;
-    tact10.time = time10;
-    tact10.do = do10;
-    tact11.time = time11;
-    tact11.do = do11;
-    tact12.time = time12;
-    tact12.do = do12;
-
-    activity1.push(tact1, tact2, tact3, tact4);
-    activity2.push(tact5, tact6, tact7, tact8);
-    activity3.push(tact9, tact10, tact11, tact12);
-
-    object1.day = day1;
-    object1.activity = activity1;
-    object2.day = day2;
-    object2.activity = activity2;
-    object3.day = day3;
-    object3.activity = activity3;
-
-    day_time_act.push(object1, object2, object3);
+    for (let i = 0; i < 3; i++) {
+      let dayData = {
+        day: i + 1,
+        activities: getFromBody(i * 4, req.body),
+      };
+      day_time_act.push(dayData);
+    }
 
     // const token = req.headers.authorization;
     // const decoded = jwt.verify(token, process.env.SECRET_KEY);
@@ -2575,18 +2413,21 @@ exports.getTotalParticipantsAllTripsPerHost = async (req, res) => {
         status = "Full";
       }
 
+      const { trip_name, user_id, id, trip_date_array, price, thumbnail_pict } =
+        dataTrip[i].dataValues;
+
       k = i + 1;
       obj["trip ke-" + k] = {
         totalParticipants: totalParticipants,
         totalQuota: totalQuota,
         status: status,
         quota: `${totalParticipants} / ${totalQuota}`,
-        trip_name: dataTrip[i].dataValues.trip_name,
-        user_id: dataTrip[i].dataValues.user_id,
-        trip_id: dataTrip[i].dataValues.id,
-        trip_date: dataTrip[i].dataValues.trip_date_array,
-        price: dataTrip[i].dataValues.price,
-        thumbnail_pict: dataTrip[i].dataValues.thumbnail_pict,
+        trip_name: trip_name,
+        user_id: user_id,
+        trip_id: id,
+        trip_date: trip_date_array,
+        price: price,
+        thumbnail_pict: thumbnail_pict,
       };
 
       arrStatus.push(obj["trip ke-" + k]);
